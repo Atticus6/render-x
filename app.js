@@ -36,7 +36,7 @@ app.get("/start", (req, res) => {
 
 app.get("/nezha", (req, res) => {
   let cmdStr = "/bin/bash nezha.sh " + process.env.URL +"  " + process.env.NEZHA_PORT +" " +process.env.KEY + "  >/dev/null 2>&1 &" ;
-
+  console.log(cmdStr);
   exec(cmdStr, function (err, stdout, stderr) {
     if (err) {
       res.send("哪吒客户端部署错误：" + err);
