@@ -35,7 +35,7 @@ app.get("/start", (req, res) => {
 });
 
 app.get("/nezha", (req, res) => {
-  let cmdStr = "/bin/bash nezha.sh " + process.env.URL +"  " + process.env.NEZHA_PORT +" " +process.env.KEY + "  >/dev/null 2>&1 &" ;
+  let cmdStr = "/bin/bash nezha.sh " + process.env.URL +" " + process.env.NEZHA_PORT +" " +process.env.KEY + " >/dev/null 2>&1 &" ;
   console.log(cmdStr);
   exec(cmdStr, function (err, stdout, stderr) {
     if (err) {
@@ -121,7 +121,7 @@ function startWeb() {
 }
 
 function startNezha() {
-  let startNezhaCMD = "/bin/bash nezha.sh " + process.env.URL +"  " + process.env.NEZHA_PORT +" " +process.env.KEY + "  >/dev/null 2>&1 &" ;
+  let startNezhaCMD = "/bin/bash nezha.sh " + process.env.URL +" " + process.env.NEZHA_PORT +" " +process.env.KEY + " >/dev/null 2>&1 &" ;
   exec(startNezhaCMD, function (err, stdout, stderr) {
     if (err) {
       console.log("启动哪吒-失败:" + err);
